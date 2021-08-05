@@ -13,3 +13,7 @@ In your README, create a subheading ## T-Tests on Suspension Coils, then briefly
 
 
 ## Design study: Mechacar vs. competition
+ - Tested metrics: MPG for city and highway driving, saftey rating, car price, and customer satisfaction rating. 
+ - Alternative hypothesis: The Mechacar has more value than other cars in it's category because it has a higher fuel efficiency, better saftey rating, lower price, and a higher customer satisfaction rating than it's competitors.  
+ - Statistical tests used to challenge alternative hypothesis: Summary statistics, one sided t-test, and p-value hypothesis tests
+ - Data needed to run tests: fuel efficiency reports, consumer reports, Kelly blue book reports, and saftey rating reports.
