@@ -20,7 +20,7 @@ The design specifications for the MechaCar suspension coils dictate that the var
 ## T-Tests on suspension coils
 Briefly summarize your interpretation and findings for the t-test results. Include screenshots of the t-test to support your summary.
 - All of the t-tests I conducted had p-value results that were greater than .5. My interpretation of this is that the mean of the sample data is the same as or close to the mean of the entire population.
-
+![C](https://github.com/wolfi584/MechaCar_Statistical_Analysis/blob/main/Challenge15_Part_3.png?raw=true)
 
 
 ## Design study: Mechacar vs. competition
