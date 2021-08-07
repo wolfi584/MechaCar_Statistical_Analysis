@@ -1,0 +1,78 @@
+
+#15.2.3
+setwd("C:/Users/wolfi/NUData/Lesson 15/Challenge/MechaCar_Statistical_Analysis/")
+library(dplyr)
+MechaCar <- read.csv(file='Resources/MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
+
+# vehicle_length,vehicle_weight,spoiler_angle,ground_clearance,AWD,mpg
+
+?lm()
+
+#Deliverable 1: Linear Regression to Predict MPG
+#An RScript is written for a linear regression model to be performed on all six variables (10 pt)
+
+#create linear model
+lm(mpg ~ vehicle_length,data=MechaCar) 
+lm(mpg ~ vehicle_weight,data=MechaCar) 
+lm(mpg ~ spoiler_angle,data=MechaCar) 
+lm(mpg ~ ground_clearance,data=MechaCar) 
+lm(mpg ~ AWD,data=MechaCar) 
+
+lm(mpg ~ vehicle_length,data=MechaCar) 
+summary(lm(mpg~vehicle_length,data=MechaCar)) 
+model <- lm(mpg ~ vehicle_length,data=MechaCar) 
+yvals <- model$coefficients['vehicle_length']*MechaCar$vehicle_length + model$coefficients['(Intercept)']
+plt <- ggplot(MechaCar,aes(x=vehicle_length,y=mpg)) 
+plt + geom_point() + geom_line(aes(y=yvals), color = "red") 
+
+lm(mpg ~ vehicle_weight,data=MechaCar) 
+summary(lm(mpg~vehicle_weight,data=MechaCar)) 
+model <- lm(mpg ~ vehicle_weight,data=MechaCar) 
+yvals <- model$coefficients['vehicle_weight']*MechaCar$vehicle_weight + model$coefficients['(Intercept)']
+plt <- ggplot(MechaCar,aes(x=vehicle_weight,y=mpg)) 
+plt + geom_point() + geom_line(aes(y=yvals), color = "red") 
+
+lm(mpg ~ spoiler_angle,data=MechaCar) 
+summary(lm(mpg~spoiler_angle,data=MechaCar)) 
+model <- lm(mpg ~ spoiler_angle,data=MechaCar) 
+yvals <- model$coefficients['spoiler_angle']*MechaCar$spoiler_angle + model$coefficients['(Intercept)']
+plt <- ggplot(MechaCar,aes(x=spoiler_angle,y=mpg)) 
+plt + geom_point() + geom_line(aes(y=yvals), color = "red")
+
+lm(mpg ~ ground_clearance,data=MechaCar) 
+summary(lm(mpg~ground_clearance,data=MechaCar)) 
+model <- lm(mpg ~ ground_clearance,data=MechaCar) 
+yvals <- model$coefficients['ground_clearance']*MechaCar$ground_clearance + model$coefficients['(Intercept)']
+plt <- ggplot(MechaCar,aes(x=ground_clearance,y=mpg)) 
+plt + geom_point() + geom_line(aes(y=yvals), color = "red") 
+
+lm(mpg ~ AWD,data=MechaCar) 
+summary(lm(mpg~AWD,data=MechaCar)) 
+model <- lm(mpg ~ AWD,data=MechaCar) 
+yvals <- model$coefficients['AWD']*MechaCar$AWD + model$coefficients['(Intercept)']
+plt <- ggplot(MechaCar,aes(x=AWD,y=mpg)) 
+plt + geom_point() + geom_line(aes(y=yvals), color = "red")
+
+
+#Deliverable 2: Create Visualizations for the Trip Analysis (30 points)
+Suspension_Coil <- read.csv(file='Resources/Suspension_Coil.csv',check.names=F,stringsAsFactors = F)
+
+summarize_nogroup <- Suspension_Coil %>% group_by() %>% summarize(Mean_PSI=mean(PSI),Median_PSI=median(PSI),SD_PSI=sd(PSI),VAR_PSI=var(PSI),.groups = 'keep')
+summarize_nogroup
+
+summarize_groupby <- Suspension_Coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean_PSI=mean(PSI),Median_PSI=median(PSI),SD_PSI=sd(PSI),VAR_PSI=var(PSI),.groups = 'keep')
+summarize_groupby
+
+#Deliverable 3: T-Tests on Suspension Coils (20 points)
+?t.test()
+
+shapiro.test(MechaCar$mpg)
+shapiro.test(Suspension_Coil$PSI)
+
+t.test(MechaCar$mpg,mu=mean(0)) #compare sample versus population means
+t.test(Suspension_Coil$PSI,mu=mean(0)) #compare sample versus population means
+
+subset() 
+
+
+
