@@ -2,8 +2,13 @@
 
 ## Linear regression to predict MPG
 Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+- vehicle length and ground clearance
+
 Is the slope of the linear model considered to be zero? Why or why not?
+- The slope of the linear model is not considered to be zero, because there is a positive slope intercept number. 
+
 Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+- Yes and no. The linear model does output data that can be considered for quality analysis. However, there are external factors in the testing environment that can have an impact on test results. For example, is the test conducted inside or outside? What was the weather on different days of the test? All of these variables should be considered because of their ability to impact results. 
 
 ## Summary statistics on suspension coils
 The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per square inch. Does the current manufacturing data meet this design specification for all manufacturing lots in total and each lot individually? Why or why not?
